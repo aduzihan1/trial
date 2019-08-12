@@ -1,4 +1,4 @@
-package com.dzh.trial.trial.tryDesignPatterns.decorator.myExample;
+package com.dzh.trial.trial.tryDesignPatterns.decorator.simpleExample;
 
 public class Decorator implements OriginalInterface {
     protected OriginalInterface ori;

@@ -1,8 +1,8 @@
 server:
-  port: 8080
+  port: 8090
 spring:
   datasource:
-    url: jdbc:mysql://127.0.0.1:3306/dzh
+    url: jdbc:mysql://127.0.0.1:3306/dzh?useSSL=false&allowPublicKeyRetrieval=true
     username: root
     password: 1sfgbbibi
     driver-class-name: com.mysql.jdbc.Driver

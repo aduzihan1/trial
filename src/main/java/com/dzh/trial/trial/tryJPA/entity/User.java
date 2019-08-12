@@ -1,9 +1,8 @@
 package com.dzh.trial.trial.tryJPA.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import org.hibernate.annotations.GenericGenerator;
+
+import javax.persistence.*;
 import java.math.BigDecimal;
 
 @Entity
@@ -11,6 +10,8 @@ import java.math.BigDecimal;
 public class User {
     @Id
     @Column(name = "id")
+    @GeneratedValue(generator = "uuid")
+    @GenericGenerator(name = "uuid", strategy = "uuid")
     private String id;
 
     @Column(name = "uname")

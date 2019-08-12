@@ -1,6 +1,7 @@
-package com.dzh.trial.trial.tryDesignPatterns.decorator.myExample;
+package com.dzh.trial.trial.tryDesignPatterns.decorator.simpleExample;
 
 public class DecoratorB extends Decorator {
+
     public DecoratorB(OriginalInterface ori){
         super(ori);
     }
@@ -15,12 +16,4 @@ public class DecoratorB extends Decorator {
         System.out.println("decorator B advise method end");
     }
 
-    public static void main(String[] args) {
-        OriginalInterface ori = new OriginalImpl();
-        ori.method();
-        System.out.println("start decorating");
-        DecoratorB decoratorB = new DecoratorB(ori);
-        decoratorB.method();
-        decoratorB.methodB();
-    }
 }

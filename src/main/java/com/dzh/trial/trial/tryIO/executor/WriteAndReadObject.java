@@ -6,7 +6,7 @@ import java.io.*;
 
 public class WriteAndReadObject implements Serializable{
     public static void main(String[] args) {
-        User user = new User();
+        /*User user = new User();
         user.setAge(12);
         user.setUname("name");
         user.setId("123");
@@ -25,7 +25,11 @@ public class WriteAndReadObject implements Serializable{
             System.out.println(userRead.toString());
         }catch (Exception e){
 
-        }
-
+        }*/
+        String a = "abc";
+        String b = a;
+        String c = "bcd";
+        b = c;
+        System.out.println("a:" + a + ";b:" + b + ";c:" +c);
     }
 }

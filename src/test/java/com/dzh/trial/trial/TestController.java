@@ -1,5 +1,7 @@
 package com.dzh.trial.trial;
 
+import com.dzh.trial.trial.feign.FeignOuterClient;
+import com.dzh.trial.trial.feign.PushPrescriptionRequest;
 import com.dzh.trial.trial.tryJPA.controller.TrialController;
 import com.dzh.trial.trial.tryJPA.service.TestAsyncService;
 import com.dzh.trial.trial.tryJPA.service.UserService;
@@ -14,15 +16,17 @@ public class TestController extends BasicTest {
     @Autowired
     TestAsyncService tas;
 
+    @Autowired
+    FeignOuterClient client;
+
     @Test
     public void testing(){
-        tas.execute();
-
-        try {
-            Thread.sleep(10000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        PushPrescriptionRequest request = new PushPrescriptionRequest();
+        request.setFile("123");
+        request.setMobileNo("18888888888");
+        request.setPrescriptionNo("123123123");
+        String res = client.pushPrescription(request);
+        System.out.println(res);
     }
 
     @Test
